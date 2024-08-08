@@ -1,0 +1,12 @@
+# This configuration expects subgraphs to be running on the
+# same machine as the router. For Docker, use graph.yaml instead.
+version: 1
+subgraphs:
+  - name: locations
+    routing_url: http://localhost:4001/graphql
+    schema:
+      file: ../subgraph-locations/locations.graphql
+  - name: reviews
+    routing_url: http://localhost:4002/graphql
+    schema:
+      file: ../subgraph-reviews/reviews.graphql
